@@ -2,6 +2,18 @@
 
 **Python · IA générative · Recherche sémantique · Gradio**
 
+[**Explorer la présentation interactive ↗**](https://jules009x.github.io/assistant-rag-pdf/) · [Ouvrir le notebook dans Colab](https://colab.research.google.com/github/jules009X/assistant-rag-pdf/blob/main/notebooks/assistant_rag_pdf.ipynb)
+
+### Mon parcours avec ce prototype
+
+Je suis **APEDOH Senam Amenyo Jules**, élève en dernière année d’école d’ingénieur en systèmes robotiques et interactifs. J’ai abordé cet atelier pour comprendre comment relier des documents à un modèle de langage : préparer le texte, retrouver les passages et construire une réponse contextualisée.
+
+Les observations m’ont amené à regarder de plus près la fiabilité de la recherche, notamment lorsqu’un passage de Lyon remonte avant ceux de Paris. Cette question se prolonge dans [AutoEval](https://jules009x.github.io/autoeval-llm-benchmark/), mon projet personnel d’évaluation de modèles locaux.
+
+La page publique propose trois observations commentées, l’architecture et les limites. Elle ne génère pas de nouvelles réponses : le notebook reste le point d’entrée pour exécuter l’assistant.
+
+### Origine du prototype
+
 Prototype pédagogique présenté par **Jules APEDOH**, réalisé à partir de l’atelier guidé **Objectif IA de Machine Learnia** en septembre 2026.
 
 Cet assistant répond à des questions sur une franchise fictive de salles de sport à partir de ses guides PDF. Il associe recherche de passages pertinents et génération de texte : une approche appelée **Retrieval-Augmented Generation (RAG)**.
@@ -95,7 +107,7 @@ Le notebook affiche les réponses et les références documentaires. Voir [les o
 
 ## Limites et suites possibles
 
-Ce projet est un prototype pédagogique. Il ne dispose ni d’un benchmark de fiabilité, ni d’un hébergement permanent. Les passages retrouvés peuvent mélanger plusieurs clubs ; la génération peut mal interpréter le contexte ou ignorer une consigne. La présence d’un PDF ne garantit pas que le passage nécessaire figure dans les trois résultats sélectionnés.
+Ce projet est un prototype pédagogique. Sa présentation statique est publiée sur GitHub Pages. Il ne dispose ni d’un benchmark de fiabilité, ni d’un service d’inférence permanent. Les passages retrouvés peuvent mélanger plusieurs clubs ; la génération peut mal interpréter le contexte ou ignorer une consigne. La présence d’un PDF ne garantit pas que le passage nécessaire figure dans les trois résultats sélectionnés.
 
 Les prochaines étapes seraient un jeu de questions avec réponses attendues, une mesure de la pertinence des passages, une meilleure gestion des villes et un test reproductible de l’environnement. Ces améliorations sont proposées, pas déjà réalisées.
 

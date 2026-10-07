@@ -23,3 +23,9 @@ Cette préparation a été réalisée avec une assistance IA. Elle n’est pas p
 ## Validation
 
 La structure du notebook, la syntaxe Python des cellules, les liens relatifs et l’intégrité de l’archive sont contrôlés lors de la préparation. Le téléchargement des modèles et l’exécution complète sur GPU ne sont pas répétés. Le dépôt ne contient donc pas de nouvelle preuve d’exécution de la version nettoyée.
+
+## Présentation publique
+
+Une page statique de portfolio a été ajoutée dans `site/` avec trois observations interactives, le parcours de Jules et une explication de l’architecture. Les cartes sont des résumés du fichier `resultats-et-limites.md`, pas des transcriptions complètes ni de nouvelles inférences. Aucune réponse supplémentaire ni métrique de performance n’a été inventée. Le notebook n’a pas été modifié pour cette publication.
+
+Le workflow `.github/workflows/pages.yml` publie uniquement `site/` sur GitHub Pages, après contrôle de la syntaxe JavaScript. La page ne charge aucun modèle et ne demande aucune clé API. Pour changer le contenu, modifier les fichiers du site et publier sur `main`.

@@ -1,0 +1,15 @@
+'use strict';
+const cases = {
+ context: `<span class="tag">Comparaison qualitative · Marseille</span><h3>Combien coûte l’abonnement Premium au club de Marseille ?</h3><div class="comparison"><div class="result"><h4>Sans les documents</h4><p>Le modèle indique ne pas disposer des informations tarifaires spécifiques.</p></div><div class="result emphasis"><h4>Avec les passages retrouvés</h4><p>Le modèle donne un montant de <strong>42,90 € par mois</strong>. L’application affiche les références des passages sélectionnés.</p></div></div><p class="lesson"><strong>Ce que j’en retiens.</strong> Le contexte apporte une information spécifique que le modèle ne donnait pas seul. Il faut encore la vérifier dans le PDF avant de compter la réponse comme correcte.</p><p class="note">Résumé de l’observation enregistrée. Ce tarif appartient au scénario fictif de l’atelier ; ce n’est pas une offre commerciale.</p>`,
+ retrieval: `<span class="tag">Recherche sémantique · Erreur de ville</span><h3>Le club de Paris propose-t-il des vélos ?</h3><table class="ranking"><thead><tr><th>Rang</th><th>Ville du passage</th><th>Similarité</th></tr></thead><tbody><tr><td>1</td><td><strong>Lyon</strong></td><td>0,55</td></tr><tr><td>2</td><td>Paris</td><td>0,53</td></tr><tr><td>3</td><td>Paris</td><td>0,52</td></tr></tbody></table><p class="lesson"><strong>Ce que j’en retiens.</strong> Le passage classé premier concerne la mauvaise ville. Un texte sémantiquement proche peut être inadapté à la question : la qualité de la recherche doit être évaluée séparément.</p><p class="note">Scores rapportés dans le relevé d’origine. Ce sont des similarités cosinus, pas des probabilités de réponse correcte. Cette carte ne présente pas de réponse générée pour ce cas.</p>`,
+ refusal: `<span class="tag">Hors corpus · Respect des consignes</span><h3>Quel est le cours du Bitcoin ?</h3><div class="comparison"><div class="result"><h4>Comportement demandé</h4><p>Signaler que l’information n’est pas dans les documents et orienter vers l’accueil avec la phrase imposée par le prompt.</p></div><div class="result emphasis"><h4>Comportement observé</h4><p>Le modèle ne donne pas de cours, mais ne reprend pas la phrase de refus demandée et évoque un « club de boxe ».</p></div></div><p class="lesson"><strong>Ce que j’en retiens.</strong> Une consigne ne suffit pas à garantir un comportement exact. Les questions hors périmètre méritent leurs propres tests.</p><p class="note">Résumé de l’essai d’origine, sans nouvelle inférence. Aucun taux de réussite n’a été calculé.</p>`
+};
+const buttons = document.querySelectorAll('[data-case]');
+function showCase(key) {
+ if (!Object.hasOwn(cases,key)) return;
+ // Fixed editorial content only; no user input or remote HTML is inserted.
+ document.getElementById('case-detail').innerHTML = cases[key];
+ buttons.forEach(button => {const active=button.dataset.case===key;button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));});
+}
+buttons.forEach(button=>button.addEventListener('click',()=>showCase(button.dataset.case)));
+showCase('context');
